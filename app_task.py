@@ -14,9 +14,17 @@ button_color = (109, 93, 110)
 text_color = (244, 238, 224)
 line_color = (255, 255, 255)
 
+#panel top profile
+bg_grad = pg.image.load("profile_grad.jpg").convert_alpha()
+bg_grad = pg.transform.scale(bg_grad, (screen.get_width()/4, screen.get_height()/4))
+profile_img = pg.image.load("j_profile.png").convert_alpha()  
+profile_img = pg.transform.scale(profile_img, (64, 64))
+
 #fonts
 fonts = pg.font.get_fonts()
+title_font = pg.font.SysFont("arial" , 40)
 base_font = pg.font.SysFont("aptosdisplay" , 30)
+small_font = pg.font.SysFont("aptosdisplay" , 25)
 
 # icons
 profile_icon = pg.image.load("profile.png").convert_alpha()
@@ -61,6 +69,8 @@ while running:
     settings = base_font.render("Settings", True, text_color)
     about = base_font.render("About Us", True, text_color)
     logout = base_font.render("Logout", True, text_color)
+    username = title_font.render("User Name", True, text_color)
+    email = small_font.render("user@example.com", True, text_color)
 
     # Blit (draw) the text onto the screen at positions inside the panel
     screen.blit(profile, (screen.get_width()/16, screen.get_height()/4 + screen.get_height()/16))
@@ -79,6 +89,16 @@ while running:
     screen.blit(settings_icon , (20, screen.get_height()/2 + screen.get_height()*2/16))
     screen.blit(about_icon , (20, screen.get_height()/2 + screen.get_height()*3/16))
     screen.blit(logout_icon , (20, screen.get_height()/2 + screen.get_height()*4/16))
+
+    #panel top profile
+    screen.blit(bg_grad , (0 , 0))
+    profile_img_x = screen.get_width() / 32
+    profile_img_y = screen.get_height() / 16
+    screen.blit(profile_img, (screen.get_width()/64, screen.get_height()/32))
+
+    # text_x = profile_img_x + 60
+    screen.blit(username, (screen.get_width()/64 , screen.get_height()/8))
+    screen.blit(email, (screen.get_width()/64, screen.get_height()/8 + screen.get_height()/16))
 
     # flip() the display to put your work on screen
     pg.display.flip()

@@ -92,11 +92,8 @@ while running:
 
     #panel top profile
     screen.blit(bg_grad , (0 , 0))
-    profile_img_x = screen.get_width() / 32
-    profile_img_y = screen.get_height() / 16
     screen.blit(profile_img, (screen.get_width()/64, screen.get_height()/32))
 
-    # text_x = profile_img_x + 60
     screen.blit(username, (screen.get_width()/64 , screen.get_height()/8))
     screen.blit(email, (screen.get_width()/64, screen.get_height()/8 + screen.get_height()/16))
 

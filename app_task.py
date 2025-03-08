@@ -15,9 +15,9 @@ text_color = (244, 238, 224)
 line_color = (255, 255, 255)
 
 #panel top profile
-bg_grad = pg.image.load("profile_grad.jpg").convert_alpha()
+bg_grad = pg.image.load("images_and_icons/profile_grad.jpg").convert_alpha()
 bg_grad = pg.transform.scale(bg_grad, (screen.get_width()/4, screen.get_height()/4))
-profile_img = pg.image.load("j_profile.png").convert_alpha()  
+profile_img = pg.image.load("images_and_icons/j_profile.png").convert_alpha()  
 profile_img = pg.transform.scale(profile_img, (64, 64))
 
 #fonts
@@ -27,13 +27,13 @@ base_font = pg.font.SysFont("aptosdisplay" , 30)
 small_font = pg.font.SysFont("aptosdisplay" , 25)
 
 # icons
-profile_icon = pg.image.load("profile.png").convert_alpha()
-group_icon = pg.image.load("group.png").convert_alpha()
-qr_icon = pg.image.load("qr.png").convert_alpha()
-feedback_icon = pg.image.load("feedback.png").convert_alpha()
-settings_icon = pg.image.load("settings.png").convert_alpha()
-about_icon = pg.image.load("about.png").convert_alpha()
-logout_icon = pg.image.load("logout.png").convert_alpha()
+profile_icon = pg.image.load("images_and_icons/profile.png").convert_alpha()
+group_icon = pg.image.load("images_and_icons/group.png").convert_alpha()
+qr_icon = pg.image.load("images_and_icons/qr.png").convert_alpha()
+feedback_icon = pg.image.load("images_and_icons/feedback.png").convert_alpha()
+settings_icon = pg.image.load("images_and_icons/settings.png").convert_alpha()
+about_icon = pg.image.load("images_and_icons/about.png").convert_alpha()
+logout_icon = pg.image.load("images_and_icons/logout.png").convert_alpha()
 
 # Resize icons (optional)
 profile_icon = pg.transform.scale(profile_icon, (20, 20))

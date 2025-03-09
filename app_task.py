@@ -44,14 +44,14 @@ settings_icon = pg.transform.scale(settings_icon, (20,20))
 about_icon = pg.transform.scale(about_icon, (20,20))
 logout_icon = pg.transform.scale(logout_icon, (20,20))
 
-# EXPENSES SCREEN 
+# THE 4 SCREENS
 expenses_illu = pg.image.load("images_and_icons/expense.png")
 expenses_illu = pg.transform.scale(expenses_illu, (200 , 200))
 
 balance_illu = pg.image.load("images_and_icons/balance.png")
 balance_illu = pg.transform.scale(balance_illu, (200 , 200))
 
-payment_illu = pg.image.load("images_and_icons/pay2.png")
+payment_illu = pg.image.load("images_and_icons/pay.png")
 payment_illu = pg.transform.scale(payment_illu, (200 , 200))
 
 new_grp = pg.image.load("images_and_icons/new_grp.png")
@@ -89,6 +89,12 @@ while running:
     username = title_font.render("User Name", True, text_color)
     email = small_font.render("user@example.com", True, text_color)
 
+    # WRITING ON SCREENS
+    add_expenses = title_font.render("ADD EXPENSES", True, text_color)
+    view_balance = title_font.render("VIEW BALANCE", True, text_color)
+    settle_payment = title_font.render("SETTLE PAYMENTS", True, text_color)
+    create_grp = title_font.render("CREATE GROUP", True, text_color)
+
     # Blit (draw) the text onto the screen at positions inside the panel
     screen.blit(profile, (screen.get_width()/16, screen.get_height()/4 + screen.get_height()/16))
     screen.blit(groups, (screen.get_width()/16, screen.get_height()/4 + screen.get_height()*2/16))
@@ -97,6 +103,9 @@ while running:
     screen.blit(settings, (screen.get_width()/16, screen.get_height()/2 + screen.get_height()*2/16))
     screen.blit(about, (screen.get_width()/16, screen.get_height()/2 + screen.get_height()*3/16))
     screen.blit(logout, (screen.get_width()/16, screen.get_height()/2 + screen.get_height()*4/16))
+
+    # Blit text for the 4 screens
+    screen.blit(add_expenses, (screen.get_width()/4 + screen.get_width()*3/16, screen.get_height()/8))
 
     # icons
     screen.blit(profile_icon, (20, screen.get_height()/4 + screen.get_height()/16))

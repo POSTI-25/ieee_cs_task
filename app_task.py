@@ -44,6 +44,19 @@ settings_icon = pg.transform.scale(settings_icon, (20,20))
 about_icon = pg.transform.scale(about_icon, (20,20))
 logout_icon = pg.transform.scale(logout_icon, (20,20))
 
+# EXPENSES SCREEN 
+expenses_illu = pg.image.load("images_and_icons/expense.png")
+expenses_illu = pg.transform.scale(expenses_illu, (200 , 200))
+
+balance_illu = pg.image.load("images_and_icons/balance.png")
+balance_illu = pg.transform.scale(balance_illu, (200 , 200))
+
+payment_illu = pg.image.load("images_and_icons/pay2.png")
+payment_illu = pg.transform.scale(payment_illu, (200 , 200))
+
+new_grp = pg.image.load("images_and_icons/new_grp.png")
+new_grp = pg.transform.scale(new_grp, (200 , 200))
+
 while running:
     # poll for events
     # pygame.QUIT event means the user clicked X to close your window
@@ -57,8 +70,12 @@ while running:
     # Drawing the left-side panel 
     panel_rect = pg.Rect(0, 0, screen.get_width()/4 , screen.get_height())  # (x, y, width, height)
     panel_line = pg.Rect(0 , screen.get_height()/2 , screen.get_width()/4 , 3)
+    div_horizontal = pg.Rect(screen.get_width()/4 + screen.get_width()/64 ,  screen.get_height()/2 , screen.get_width()*3/4 - screen.get_width()/32, 3)
+    div_vertical = pg.Rect(screen.get_width()/4 + screen.get_width()*3/8 ,  screen.get_height()/32 , 3, screen.get_height() - screen.get_height()/16)
     pg.draw.rect(screen, panel_color, panel_rect)
     pg.draw.rect(screen, line_color, panel_line)
+    pg.draw.rect(screen, button_color, div_horizontal)
+    pg.draw.rect(screen, button_color, div_vertical)
     # RENDER YOUR GAME HERE
 
     # writing on panel
@@ -97,6 +114,11 @@ while running:
     screen.blit(username, (screen.get_width()/64 , screen.get_height()/8))
     screen.blit(email, (screen.get_width()/64, screen.get_height()/8 + screen.get_height()/16))
 
+    # EXPENSES SCREEN
+    screen.blit(expenses_illu, (screen.get_width()/4 + screen.get_width()/32, screen.get_height()/8))
+    screen.blit(balance_illu, (screen.get_width()/4 + screen.get_width()*3/8 + screen.get_width()/32, screen.get_height()/8))
+    screen.blit(payment_illu, (screen.get_width()/4 + screen.get_width()/32, screen.get_height()/2 + screen.get_height()/8))
+    screen.blit(new_grp, (screen.get_width()/4 + screen.get_width()*3/8 + screen.get_width()/32, screen.get_height()/2 + screen.get_height()/8))
     # flip() the display to put your work on screen
     pg.display.flip()
 

@@ -22,7 +22,7 @@ profile_img = pg.transform.scale(profile_img, (64, 64))
 
 #fonts
 fonts = pg.font.get_fonts()
-title_font = pg.font.SysFont("arial" , 30, bold=True)
+title_font = pg.font.SysFont("arial" , 27, bold=True)
 base_font = pg.font.SysFont("aptosdisplay" , 30)
 small_font = pg.font.SysFont("aptosdisplay" , 25)
 
@@ -106,7 +106,10 @@ while running:
     screen.blit(logout, (screen.get_width()/16, screen.get_height()/2 + screen.get_height()*4/16))
 
     # Blit text for the 4 screens
-    screen.blit(add_expenses, (screen.get_width()/4 + screen.get_width()*3/16 + screen.get_width()/64, screen.get_height()/4))
+    screen.blit(add_expenses, (screen.get_width()/4 + screen.get_width()*13/64, screen.get_height()/4))
+    screen.blit(settle_payment, (screen.get_width()/4 + screen.get_width()*13/64, screen.get_height()*3/4))
+    screen.blit(view_balance, (screen.get_width()/4 + screen.get_width()*37/64, screen.get_height()/4))
+    screen.blit(create_grp, (screen.get_width()/4 + screen.get_width()*37/64, screen.get_height()*3/4))
 
     # icons
     screen.blit(profile_icon, (20, screen.get_height()/4 + screen.get_height()/16))

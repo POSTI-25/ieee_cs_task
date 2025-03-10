@@ -22,7 +22,7 @@ profile_img = pg.transform.scale(profile_img, (64, 64))
 
 #fonts
 fonts = pg.font.get_fonts()
-title_font = pg.font.SysFont("arial" , 40)
+title_font = pg.font.SysFont("arial" , 30, bold=True)
 base_font = pg.font.SysFont("aptosdisplay" , 30)
 small_font = pg.font.SysFont("aptosdisplay" , 25)
 
@@ -76,6 +76,7 @@ while running:
     pg.draw.rect(screen, line_color, panel_line)
     pg.draw.rect(screen, button_color, div_horizontal)
     pg.draw.rect(screen, button_color, div_vertical)
+
     # RENDER YOUR GAME HERE
 
     # writing on panel
@@ -105,7 +106,7 @@ while running:
     screen.blit(logout, (screen.get_width()/16, screen.get_height()/2 + screen.get_height()*4/16))
 
     # Blit text for the 4 screens
-    screen.blit(add_expenses, (screen.get_width()/4 + screen.get_width()*3/16, screen.get_height()/8))
+    screen.blit(add_expenses, (screen.get_width()/4 + screen.get_width()*3/16 + screen.get_width()/64, screen.get_height()/4))
 
     # icons
     screen.blit(profile_icon, (20, screen.get_height()/4 + screen.get_height()/16))
